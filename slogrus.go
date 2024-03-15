@@ -55,6 +55,10 @@ func (l *Logger) WithFields(fields ...Fields) *Entry {
 	}
 }
 
+func (l *Logger) GetSlogLogger() slog.Logger {
+	return *l.logger
+}
+
 func (l *Logger) Debug(message string) {
 	l.logger.Debug(message)
 }
