@@ -1,7 +1,8 @@
 package main
 
 import (
-	"github.com/squeakycheese75/slogrus"
+	// "github.com/squeakycheese75/slogrus"
+	slogrus "github.com/squeakycheese75/slogrus"
 )
 
 func main() {
@@ -26,4 +27,9 @@ func main() {
 			"datasetId":    "123456",
 		},
 	}).Debug("UpdateDataColumn request received")
+
+	// Call without creating Loger
+	slogrus.WithFields(slogrus.Fields{
+		"animal": "walrus",
+	}).Info("A walrus appears")
 }
